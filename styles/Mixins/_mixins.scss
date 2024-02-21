@@ -1,0 +1,99 @@
+
+@mixin title-font{
+    font-family: "Shrikhand", serif;
+}
+      
+
+@mixin text-font{
+    font-family: "Roboto", sans-serif;
+}
+      
+@mixin dot{
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    margin:0 15px;
+    position: relative;
+}
+@mixin location-shadow{
+    box-shadow:
+    0 0 0.4em rgba(0,0,0,0.25),
+    inset 0 0 0.5em rgba(0,0,0,0.25);
+    
+}
+@mixin button-order-shadow {
+    box-shadow: 0 4px 10px 0px rgba(0,0,0,0.25);
+}
+@mixin button-order-shadow-animation{
+    box-shadow: 0 10px 15px 0px rgba(0,0,0,0.25);
+}
+@mixin button-operation-shadow {
+    box-shadow: 0 4px 15px 0px rgba(0,0,0,0.15);
+}
+@mixin card-shadow{
+    box-shadow: 0px 4px 15px 0px rgba(0,0,0,0.10);
+}
+@mixin card-new-shadow{
+    box-shadow:0 2px 4px 0px rgba(0,0,0,0.15);
+}
+@mixin button-purple{
+    border-radius: 25px;
+    color: $text-white;
+    background:linear-gradient($secondary-color,$primary-color) ;
+    border: none;
+    font-size: 1rem;
+    font-weight: medium;
+    font-style: normal;
+    @include text-font;
+    @include button-order-shadow;
+    cursor: pointer;
+    height: 50px;
+    transition: all 400ms;
+    z-index:1;
+    &:hover{
+        @include button-order-shadow-animation;
+        opacity: 0.85;
+    }
+}
+@mixin card{
+    background-color: $text-white;
+    border-radius: 20px;
+    width: 100%;
+    height: 251px;
+    @include card-shadow;
+    position: relative;
+   
+    
+}
+@mixin badge-new{
+    background-color: $tertiary-color;
+    color: $quaternary-color;
+    border-radius: 2px;
+    @include card-new-shadow;
+    @include text-font;
+    font-size: 0.875rem;
+    width: 5rem; 
+    height: 29px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 13px;
+    right: 13px;
+    z-index: 1;
+}
+@mixin heart{
+        stroke:$text-black;
+        stroke-width: 1px;
+        fill-opacity: 0;
+        cursor:pointer;
+        transition: all 300ms;
+        &:hover{
+            stroke: none;
+            fill-opacity: 1;
+        }
+}
+@mixin footer{
+    background-color: $dark-grey;
+    color: $text-white;
+}

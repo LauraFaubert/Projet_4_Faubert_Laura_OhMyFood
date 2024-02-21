@@ -1,0 +1,391 @@
+@import "Reset/reset";
+@import "Variables/variables";
+@import "Mixins/mixins";
+@import "Menus/menu";
+
+/*Général*/
+body{
+    display: flex;
+    flex-direction: column;
+    @include text-font;
+    
+}
+.main-container{
+    width: 100%;
+    min-width: 320px;
+    gap:30px;
+    position: relative;
+    @media screen and (min-width:1024px) {
+        width: 1440px;
+    }
+}
+main{
+    display: flex;
+    flex-direction: column;
+}
+
+a{
+    color: inherit;
+    text-decoration: none;
+}
+
+//loader//
+.loader{
+    background-color: $background-lightgrey;
+    z-index: 100;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    animation: loader 3s both;
+    &-container{
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        & div{
+            @include dot;
+            animation: barres 1.2s ease-in-out  infinite;
+        }
+    }
+}
+.loader-container div:nth-child(1) {
+    background-color: $primary-color;
+    animation-delay: 0s;
+    position: relative;
+}
+.loader-container div:nth-child(2){
+    background-color: $secondary-color;
+    animation-delay: 0.20s;
+    position: relative;
+}
+.loader-container div:nth-child(3){
+    background-color: $tertiary-color;
+    animation-delay: 0.40s;
+    position: relative;
+}
+
+@keyframes barres{
+    0%{
+        height:20px;
+    }
+    50%{
+        height: 60px;
+    }
+    100%{
+        height: 20px;
+    }
+}
+@keyframes loader{
+100%{
+    display: none;
+    visibility: hidden;
+}
+}
+
+/*Header*/
+.nav__bar_homepage{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+   
+}
+.logoohmyfood{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 36px;
+    margin: 14px auto;
+    @media screen and (min-width:1024px){
+        width: 200px;
+    }
+}
+.search-bar{
+    width: 100%;
+    background:$background-grey;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 50px;
+    @include location-shadow;
+    @media screen and (min-width:1024px){
+        box-shadow: none;
+    }
+    
+}
+.icone-localisation{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height: 16px;
+    width: 18px;
+    color: $dark-grey;
+    margin-right: 17px;
+}
+.fa-location-dot{
+    font-size: 1rem;
+    border: none;
+}
+input{
+    border:none;
+    background-color: $background-grey;
+    color: $dark-grey;
+    outline: none;
+    width: 115px;
+    
+}
+input::placeholder{
+    color: $dark-grey;
+    font-size: 1rem;
+    font-weight: 500;
+    opacity: 1;
+    width: 110px;
+}
+.recherche{
+    display: none;
+}
+.title-and-tagline{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    background-color: $background-lightgrey;
+    padding: 30px 0px;
+
+    & h1{
+        width: 275px;
+        height: 68px;
+        font-weight: 700;
+        font-size:1.5rem;
+        @media screen and (min-width:1024px){
+            width: 100%;
+            font-size: 40px;
+        }
+    }
+
+    & p{
+        color:$dark-grey;
+        font-weight: 300;
+        font-size: 1.125em;
+    }
+    & button{
+        @include button-purple;
+        width: 218px;
+        margin-top: 30px;
+        }
+    }
+.operation{
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    gap:25px;
+    padding: 50px 20px;
+    @media screen and (min-width:1024px){
+        padding: 50px 180px;
+    }
+    & h2{
+        font-weight: 700;
+        font-size:1.5rem;
+    }
+    & ol{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+        counter-reset: li;
+        @media screen and (min-width:1024px){
+            flex-direction: row;
+            justify-content: space-between;
+            gap: 25px;
+        
+        }
+    }
+    & li{
+        display: flex;
+        position: relative;
+        gap:25px;
+        @include button-operation-shadow;
+        font-family: inherit;
+        align-items: center;
+        padding:29px 38px 29px 33px;
+        width: 100%;
+        flex-basis: 100%;
+        border-radius: 20px;
+        font-size: 1rem;
+        font-weight: 500;
+        background-color: $background-lightgrey;
+    }
+    & i{
+        
+        color:$fifth-color;
+       
+    }
+    & .fa-store{
+        color: $primary-color;
+    } 
+    
+}
+ol li::before{
+    counter-increment:li;
+    content: counter(li) "";
+    position:absolute;
+    left: -12px;
+    border-radius: 100px;
+    height:24px;
+    width: 24px;
+    background-color: $primary-color;
+    color: $text-white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 500;
+    z-index: 1;
+}
+.restaurants-section{
+    background-color:$background-lightgrey;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+    gap:30px;
+    padding: 50px 20px;
+    @media screen and (min-width:1024px){
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 30px 180px;
+        gap:40px;
+    }
+    & h2{
+        font-weight: 700;
+        font-size:1.5rem;
+    }
+}
+
+.restaurant-cards a{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    @media screen and (min-width:1024px){
+        align-items: center;
+        gap: 50px;
+    }
+}
+.restaurant-cards{
+    display: flex;
+    gap: 18px;
+    flex-direction: column;
+    width: 100%;
+    @media screen and (min-width:1024px){
+        flex-direction: row;
+        align-items: center;
+        gap: 100px;
+    }
+}
+.cards{
+    @include card;
+    
+    .cards-new{
+        @include badge-new;
+    }
+    & img{
+        display: flex;
+        object-fit: cover;
+        width: 100%;
+        height: 174px;
+        border-radius: 15px 15px 0 0;
+    }
+    .cards-contenant{
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 16px 25px 12px 13px;
+
+        & .cards-text{
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            width: 85%;
+            height: auto;
+            gap:5px;
+    
+        & h3{
+            height: 20px;
+            color:$text-black;
+            font-weight: 700;
+            @media screen and (min-width:1024px){
+                width: 24.063rem;
+            }
+        }
+        & p{
+            height: 24px;
+            font-size: 1.063rem;
+            font-weight: 300;
+            @media screen and (min-width:1024px){
+                width:22.188rem;
+            }
+        }
+        }
+        
+    }
+}
+.cards-heart{
+
+    & svg{
+        @include heart;
+
+    }
+}
+
+
+
+footer{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    gap:16px;
+    background-color: $dark-grey;
+    color: $text-white;
+    padding: 22px 25px;
+    
+    @media screen and (min-width:1024px){
+        flex-flow: row-reverse;
+        padding: 30px 25px;
+        gap:90px;
+    }
+
+    & h3{
+        @include title-font;
+        font-size: 1.125rem;
+        
+    }
+    .footer-contenair{
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        gap:7px;
+    
+        @media screen and (min-width:1024px){
+            flex-direction: row;
+            justify-content: flex-end;
+            align-items: flex-end;
+            gap:15px;
+        }
+    }
+    & a{
+        display: flex;
+        gap:11px ;
+        align-items: flex-start;
+        font-weight: 500;
+    }
+
+    & i{
+        width: 11px;
+        height: 13px;
+        font-size:14px ;
+
+    }
+}
