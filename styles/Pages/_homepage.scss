@@ -127,7 +127,6 @@ ol li::before{
     width: 100%;
     @media screen and (min-width:1024px){
         align-items: center;
-        gap: 50px;
     }
 }
 .restaurant-cards{
@@ -146,8 +145,10 @@ ol li::before{
     position:relative;
     display: flex;
     flex-direction: column;
-    width: 100%;
-    
+
+    & a{
+        width: 100%;
+    }
     .cards-new{
         @include badge-new;
     }

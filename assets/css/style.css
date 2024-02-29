@@ -41,7 +41,7 @@ a {
   background-color: #F6F6F6;
   z-index: 100;
   position: fixed;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   animation: loader 3s both;
 }
@@ -350,7 +350,6 @@ ol li::before {
 @media screen and (min-width: 1024px) {
   .restaurant-cards .cards {
     align-items: center;
-    gap: 50px;
   }
 }
 
@@ -378,6 +377,8 @@ ol li::before {
   position: relative;
   display: flex;
   flex-direction: column;
+}
+.cards a {
   width: 100%;
 }
 .cards .cards-new {
