@@ -54,47 +54,50 @@
 }
 form{
     position: relative;
-}
-
-.liste-plats{
     display: flex;
-    justify-content: flex-start;
-    border: none;
     flex-direction: column;
-    margin-bottom: 40px;
     @media screen and (min-width:1024px){
         align-items: center;
      }
-
 }
 
 .formule{
     display: flex;
+    justify-content: flex-start;
+    border: none;
     flex-direction: column;
     gap:12px;
+    margin-bottom: 40px;
     @media screen and (min-width:1024px){
-        width:60%;
+        width: 60%;
      }
-    
-    &-title{
-        position: relative;
-        height: 27px;
-        font-size: 1rem;
-        font-weight: 300;
-        animation: animation_formule 0.3s both;
 
-    }
+}
+ 
+.formule-title{
+    position: relative;
+    height: 27px;
+    font-size: 1rem;
+    font-weight: 300;
+    margin-bottom: 15px;
+    animation: animation_formule 0.3s both;
 
-     & legend::after {
-        content:"";
-        position: absolute;
-        left:0px;
-        bottom:0px;
-        width: 40px;
-        height: 3px;
-        background-color: $tertiary-color;
-        
+    &::after {
+    content:"";
+    position: absolute;
+    left:0px;
+    bottom:0px;
+    width: 40px;
+    height: 3px;
+    background-color: $tertiary-color;   
     }
+}
+.liste-plats{
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    flex-direction: column;
+    gap:12px;
 }
 .plats{
     display: flex;
@@ -111,6 +114,7 @@ form{
     animation: animation_formule 0.3s both;
 
     @media screen and (min-width:1024px){
+        align-items: center;
         &:hover{
             .plats-check{
                 @include animation-check-price;

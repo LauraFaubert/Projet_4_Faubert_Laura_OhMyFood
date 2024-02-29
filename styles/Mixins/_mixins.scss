@@ -42,7 +42,7 @@
     background:linear-gradient($secondary-color,$primary-color) ;
     border: none;
     font-size: 1rem;
-    font-weight: medium;
+    font-weight: 500;
     font-style: normal;
     @include text-font;
     @include button-order-shadow;
