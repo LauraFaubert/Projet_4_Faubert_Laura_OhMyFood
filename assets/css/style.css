@@ -121,6 +121,7 @@ a {
   background: #EAEAEA;
   display: flex;
   align-items: center;
+  flex-direction: row;
   justify-content: center;
   text-align: center;
   height: 50px;
@@ -223,7 +224,10 @@ input::placeholder {
   font-weight: 300;
   font-size: 1.125em;
 }
-.title-and-tagline button {
+.title-and-tagline .button-purple {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-radius: 25px;
   color: #FFFFFF;
   background: linear-gradient(#FF79DA, #9356DC);
@@ -240,7 +244,7 @@ input::placeholder {
   width: 218px;
   margin-top: 30px;
 }
-.title-and-tagline button:hover {
+.title-and-tagline .button-purple:hover {
   box-shadow: 0 10px 15px 0px rgba(0, 0, 0, 0.25);
   opacity: 0.85;
 }
@@ -338,13 +342,13 @@ ol li::before {
   font-size: 1.5rem;
 }
 
-.restaurant-cards a {
+.restaurant-cards .cards {
   display: flex;
   justify-content: center;
   width: 100%;
 }
 @media screen and (min-width: 1024px) {
-  .restaurant-cards a {
+  .restaurant-cards .cards {
     align-items: center;
     gap: 50px;
   }
@@ -371,6 +375,10 @@ ol li::before {
   height: 251px;
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1);
   position: relative;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 .cards .cards-new {
   background-color: #99E2D0;
@@ -437,6 +445,9 @@ ol li::before {
   fill-opacity: 0;
   cursor: pointer;
   transition: all 450ms;
+  position: absolute;
+  bottom: 33px;
+  right: 25px;
 }
 @media screen and (min-width: 1024px) {
   .cards-heart svg:hover {
@@ -567,13 +578,13 @@ footer i {
   }
 }
 
-form {
+.formulaire-menu {
   position: relative;
   display: flex;
   flex-direction: column;
 }
 @media screen and (min-width: 1024px) {
-  form {
+  .formulaire-menu {
     align-items: center;
   }
 }

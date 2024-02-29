@@ -23,7 +23,10 @@
         font-weight: 300;
         font-size: 1.125em;
     }
-    & button{
+    & .button-purple{
+        display: flex;
+        justify-content: center;
+        align-items: center;
         @include button-purple;
         width: 218px;
         margin-top: 30px;
@@ -118,7 +121,7 @@ ol li::before{
     }
 }
 
-.restaurant-cards a{
+.restaurant-cards .cards{
     display: flex;
     justify-content: center;
     width: 100%;
@@ -140,6 +143,10 @@ ol li::before{
 }
 .cards{
     @include card;
+    position:relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
     
     .cards-new{
         @include badge-new;
@@ -189,7 +196,9 @@ ol li::before{
 
     & svg{
         @include heart;
-
+        position: absolute;
+        bottom: 33px;
+        right:25px;
     }
 }
 
