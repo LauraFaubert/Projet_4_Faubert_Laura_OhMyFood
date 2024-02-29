@@ -87,11 +87,23 @@
         stroke-width: 1px;
         fill-opacity: 0;
         cursor:pointer;
-        transition: all 300ms;
-        &:hover{
-            stroke: none;
-            fill-opacity: 1;
+        transition: all 450ms;
+        @media screen and (min-width:1024px){
+            &:hover{
+                stroke: none;
+                fill-opacity: 1;
+            }
         }
+}
+@mixin input-none{
+    width: 0;
+    height: 0;
+    opacity: 0;
+    display: none;
+}
+@mixin animation-check-price{
+    transform-origin: right;
+    transition: all 450ms ease;
 }
 @mixin footer{
     background-color: $dark-grey;

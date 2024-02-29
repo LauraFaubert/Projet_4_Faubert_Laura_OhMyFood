@@ -9,3 +9,11 @@ $background-lightgrey:#F6F6F6;
 $background-grey:#EAEAEA;
 $text-white:#FFFFFF;
 $text-black:#000000;
+
+// Variables pour les animations menus
+
+$anim-dur:1000ms;
+$num-enfants: 4;
+$anim-delay: $anim-dur / $num-enfants;
+$num-enfants-var: 5;
+$anim-delay-var:$anim-dur / $num-enfants-var;

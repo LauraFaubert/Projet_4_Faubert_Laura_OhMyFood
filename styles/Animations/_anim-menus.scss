@@ -1,0 +1,55 @@
+// Animation Menu
+
+// entree 3plats
+
+.anim{
+    animation: animation_formule $anim-dur linear;
+    @for $i from 1 through $num-enfants {
+        .anim#{$i} {
+            animation-delay: $anim-delay * $i ;
+        }
+    }
+}
+// Entrée 4 plats
+.anim_var{
+    animation: animation_formule $anim-dur linear;
+    @for $i from 1 through $num-enfants-var {
+        .anim-var#{$i} {
+            animation-delay: $anim-delay-var * $i ;
+        }
+    }
+}
+// Animation plats
+
+.anim_plats{
+    animation: animation_formule $anim-dur linear;
+    @for $i from 1 through $num-enfants {
+        .anim-plats#{$i} {
+            animation-delay: ($anim-delay * $i)+1000ms  ;
+        }
+    }
+}
+
+//Animation desserts
+.anim_dessert{
+    animation: animation_formule $anim-dur linear;
+    @for $i from 1 through $num-enfants {
+        .anim-dessert#{$i} {
+            animation-delay: ($anim-delay * $i)+2000ms  ;
+        }
+    }
+}
+@keyframes animation_formule{
+    0%{
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    50%{
+        opacity:0.5;
+        transform: scaleX(-5%);
+    }
+    100%{
+        opacity: 1;
+        transform:translateX(0) translateY(1%);
+    }
+}

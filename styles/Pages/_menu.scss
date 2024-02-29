@@ -1,0 +1,214 @@
+/*Mise en page des Menus*/
+
+.menu-img{
+    display: flex;
+    width: 100%;
+
+    & img{
+        width: 100%;
+        height: 275px;
+        object-fit: cover;
+        background-position: center;
+    }
+
+}
+.menu-restaurant{
+    display: flex;
+    flex-direction: column;
+    gap:40px;
+    background-color: $background-lightgrey;
+    border-radius: 40px 40px 0px 0px ;
+    margin-top: -55px;
+    padding: 33px 13px 40px 13px;
+    position: relative;
+    z-index: 1;
+
+    @media screen and (min-width:1024px){
+        width: 73%;
+        justify-content: center;
+        align-self:center;
+    }
+    & .menu-restaurant-nom{
+        display: flex;
+        flex-direction: row;
+        padding-right: 24px;
+        align-items: center;
+        gap:30px;
+        @media screen and (min-width:1024px){
+            justify-content: center;
+            padding-right: 0;
+            gap:24px;
+        }
+    }
+    & h1{
+        @include title-font;
+        font-size: 1.75rem;
+    }
+
+    & svg{
+        @include heart;
+        transition: all 400ms;
+        
+    }
+
+}
+form{
+    position: relative;
+}
+
+.liste-plats{
+    display: flex;
+    justify-content: flex-start;
+    border: none;
+    flex-direction: column;
+    margin-bottom: 40px;
+    @media screen and (min-width:1024px){
+        align-items: center;
+     }
+
+}
+
+.formule{
+    display: flex;
+    flex-direction: column;
+    gap:12px;
+    @media screen and (min-width:1024px){
+        width:60%;
+     }
+    
+    &-title{
+        position: relative;
+        height: 27px;
+        font-size: 1rem;
+        font-weight: 300;
+        animation: animation_formule 0.3s both;
+
+    }
+
+     & legend::after {
+        content:"";
+        position: absolute;
+        left:0px;
+        bottom:0px;
+        width: 40px;
+        height: 3px;
+        background-color: $tertiary-color;
+        
+    }
+}
+.plats{
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    background-color: $text-white;
+    width: 100%;
+    gap:5px;
+    padding: 15px;
+    @include card-shadow;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    animation: animation_formule 0.3s both;
+
+    @media screen and (min-width:1024px){
+        &:hover{
+            .plats-check{
+                @include animation-check-price;
+                transform: translateX(0);
+            }
+            .plats-montant{
+                @include animation-check-price;
+                transform: translateX(-62px);
+            }
+        }
+    }
+}
+.plats-title{
+    display: flex;
+    display: block;
+    height:21px;
+    width: 85%;
+    font-size: 1.125rem;
+    font-weight: 700;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    @media screen and (min-width:1024px){
+        overflow: visible;
+    }
+}
+.plats-text{
+    display: flex;
+    display: block;
+    max-width: 70%;
+    box-sizing: border-box;
+    height: 19px;
+    font-weight:300;
+    font-size: 0.938rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    @media screen and (min-width:1024px){
+        overflow: visible;
+        }
+}
+.plats-montant{
+    display: block;
+    position:absolute;
+    top:40px;
+    right: 20px;
+    font-weight: 700;
+    transform: translateX(0);
+    transition: all 450ms ease;
+}
+.plats-check{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:$tertiary-color;
+    border-radius: 0 15px 15px 0;
+    position: absolute;
+    width: 59px;
+    height: 100%;
+    top:0px;
+    right: 0px;
+    transform: translateX(62px);
+    transition: all 450ms ease;
+    & i{
+        color: $text-white;
+    }
+}
+
+.content-checkbox{
+    @include input-none;
+}
+.check-click-content{
+    cursor: pointer;
+    display:block;
+    display: flex;
+    flex-direction: column;
+    gap:5px;
+    width: 100%;
+    overflow: hidden;
+}
+.content-checkbox:checked ~ .plats-check {
+    @include animation-check-price;
+    transform: translateX(0);
+}
+.content-checkbox:checked ~ .check-click-content .plats-montant {
+    @include animation-check-price;
+    transform: translateX(-62px);
+}
+
+.bouton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    & button{
+        @include button-purple;
+        width: 186px;
+    }
+}
+
+
+

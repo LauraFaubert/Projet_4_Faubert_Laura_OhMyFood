@@ -1,0 +1,12 @@
+//Le SCSS qui regroupe les autres scss
+
+@import "Reset/reset";
+@import "Variables/variables";
+@import "Mixins/mixins";
+@import "Composants/general";
+@import "Animations/loader";
+@import "Composants/header";
+@import "Pages/homepage";
+@import "Composants/footer";
+@import "Pages/menu";
+@import "Animations/anim-menus";

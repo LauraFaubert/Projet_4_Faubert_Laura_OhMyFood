@@ -1,0 +1,49 @@
+/*Footer Home Page et Menus */
+
+footer{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    gap:16px;
+    background-color: $dark-grey;
+    color: $text-white;
+    padding: 22px 25px;
+    
+    @media screen and (min-width:1024px){
+        flex-flow: row-reverse;
+        padding: 30px 25px;
+        gap:90px;
+    }
+
+    & h3{
+        @include title-font;
+        font-size: 1.125rem;
+        
+    }
+    .footer-contenair{
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        gap:7px;
+    
+        @media screen and (min-width:1024px){
+            flex-direction: row;
+            justify-content: flex-end;
+            align-items: flex-end;
+            gap:15px;
+        }
+    }
+    & a{
+        display: flex;
+        gap:11px ;
+        align-items: flex-start;
+        font-weight: 500;
+    }
+
+    & i{
+        width: 11px;
+        height: 13px;
+        font-size:14px ;
+
+    }
+}
