@@ -131,27 +131,24 @@
     display: flex;
     display: block;
     height:21px;
-    width: 85%;
+    width: 100%;
     font-size: 1.125rem;
     font-weight: 700;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
     @media screen and (min-width:1024px){
         overflow: visible;
     }
 }
 .plats-text{
-    display: flex;
     display: block;
-    max-width: 70%;
     box-sizing: border-box;
     height: 19px;
+    width:100%;
     font-weight:300;
     font-size: 0.938rem;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    transition: all 500ms ease ;
     @media screen and (min-width:1024px){
         overflow: visible;
         }
@@ -164,6 +161,7 @@
     font-weight: 700;
     transform: translateX(0);
     transition: all 450ms ease;
+    
 }
 .plats-check{
     display: flex;
@@ -182,7 +180,7 @@
         color: $text-white;
     }
 }
-
+//Animation du check au clic //
 .content-checkbox{
     @include input-none;
 }
@@ -195,13 +193,18 @@
     width: 100%;
     overflow: hidden;
 }
+
 .content-checkbox:checked ~ .plats-check {
     @include animation-check-price;
     transform: translateX(0);
 }
-.content-checkbox:checked ~ .check-click-content .plats-montant {
+.content-checkbox:checked ~ .check-click-content .plats-montant  {
     @include animation-check-price;
     transform: translateX(-62px);
+}
+.content-checkbox:checked ~ .check-click-content .plats-text {
+   width: 70%;
+   overflow: hidden;
 }
 
 .bouton{
