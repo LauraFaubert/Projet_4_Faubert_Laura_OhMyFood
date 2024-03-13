@@ -39,11 +39,24 @@
     gap:25px;
     padding: 50px 20px;
     @media screen and (min-width:1024px){
-        padding: 50px 180px;
+        align-items: center; 
+        justify-content: center;
+        padding:50px 0px;
+    }
+    &-liste{
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        @media screen and (min-width:1024px){
+            width: 80%;
+        }
     }
     & h2{
         font-weight: 700;
         font-size:1.5rem;
+        @media screen and (min-width:1024px){
+            align-self: flex-start;
+        }
     }
     & ol{
         display: flex;
@@ -55,6 +68,7 @@
         @media screen and (min-width:1024px){
             flex-direction: row;
             justify-content: space-between;
+            width: auto;
             gap: 25px;
         
         }
@@ -101,7 +115,7 @@ ol li::before{
     font-weight: 500;
     z-index: 1;
 }
-.restaurants-section{
+.restaurant-section{
     background-color:$background-lightgrey;
     display: flex;
     flex-direction: column;
@@ -110,34 +124,47 @@ ol li::before{
     gap:30px;
     padding: 50px 20px;
     @media screen and (min-width:1024px){
-        flex-direction: row;
-        flex-wrap: wrap;
-        padding: 30px 180px;
-        gap:40px;
+        align-items: center; 
+        justify-content: center;
+        padding:30px 0 30px 0 ;
+        
+
+    }
+   
+}
+.restaurant-content{
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    width: 100%;
+    @media screen and (min-width:1024px){
+        gap:50px;
+        align-items: center;
+        width: 80%;
+         
     }
     & h2{
         font-weight: 700;
         font-size:1.5rem;
+        @media screen and (min-width:1024px){
+            align-self: flex-start;
+    
+        }
+    
     }
+
 }
 
-.restaurant-cards .cards{
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    @media screen and (min-width:1024px){
-        align-items: center;
-    }
-}
 .restaurant-cards{
     display: flex;
-    gap: 18px;
     flex-direction: column;
+    gap:18px;
     width: 100%;
     @media screen and (min-width:1024px){
+        gap:50px;
         flex-direction: row;
         align-items: center;
-        gap: 100px;
+        flex-basis: 100%;
     }
 }
 .cards{
@@ -145,9 +172,9 @@ ol li::before{
     position:relative;
     display: flex;
     flex-direction: column;
-
     & a{
         width: 100%;
+        flex-basis: 100%;
     }
     .cards-new{
         @include badge-new;

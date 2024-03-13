@@ -258,12 +258,29 @@ input::placeholder {
 }
 @media screen and (min-width: 1024px) {
   .operation {
-    padding: 50px 180px;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 0px;
+  }
+}
+.operation-liste {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+@media screen and (min-width: 1024px) {
+  .operation-liste {
+    width: 80%;
   }
 }
 .operation h2 {
   font-weight: 700;
   font-size: 1.5rem;
+}
+@media screen and (min-width: 1024px) {
+  .operation h2 {
+    align-self: flex-start;
+  }
 }
 .operation ol {
   display: flex;
@@ -277,6 +294,7 @@ input::placeholder {
   .operation ol {
     flex-direction: row;
     justify-content: space-between;
+    width: auto;
     gap: 25px;
   }
 }
@@ -320,7 +338,7 @@ ol li::before {
   z-index: 1;
 }
 
-.restaurants-section {
+.restaurant-section {
   background-color: #F6F6F6;
   display: flex;
   flex-direction: column;
@@ -330,40 +348,48 @@ ol li::before {
   padding: 50px 20px;
 }
 @media screen and (min-width: 1024px) {
-  .restaurants-section {
-    flex-direction: row;
-    flex-wrap: wrap;
-    padding: 30px 180px;
-    gap: 40px;
+  .restaurant-section {
+    align-items: center;
+    justify-content: center;
+    padding: 30px 0 30px 0;
   }
 }
-.restaurants-section h2 {
-  font-weight: 700;
-  font-size: 1.5rem;
-}
 
-.restaurant-cards .cards {
+.restaurant-content {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  gap: 18px;
   width: 100%;
 }
 @media screen and (min-width: 1024px) {
-  .restaurant-cards .cards {
+  .restaurant-content {
+    gap: 50px;
     align-items: center;
+    width: 80%;
+  }
+}
+.restaurant-content h2 {
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+@media screen and (min-width: 1024px) {
+  .restaurant-content h2 {
+    align-self: flex-start;
   }
 }
 
 .restaurant-cards {
   display: flex;
-  gap: 18px;
   flex-direction: column;
+  gap: 18px;
   width: 100%;
 }
 @media screen and (min-width: 1024px) {
   .restaurant-cards {
+    gap: 50px;
     flex-direction: row;
     align-items: center;
-    gap: 100px;
+    flex-basis: 100%;
   }
 }
 
@@ -371,6 +397,7 @@ ol li::before {
   background-color: #FFFFFF;
   border-radius: 20px;
   width: 100%;
+  flex-basis: 100%;
   height: 251px;
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1);
   position: relative;
@@ -380,6 +407,7 @@ ol li::before {
 }
 .cards a {
   width: 100%;
+  flex-basis: 100%;
 }
 .cards .cards-new {
   background-color: #99E2D0;
@@ -667,6 +695,10 @@ footer i {
   width: 100%;
   font-size: 1.125rem;
   font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: all 500ms ease;
 }
 @media screen and (min-width: 1024px) {
   .plats-title {
@@ -747,6 +779,11 @@ footer i {
   transform-origin: right;
   transition: all 450ms ease;
   transform: translateX(-62px);
+}
+
+.content-checkbox:checked ~ .check-click-content .plats-title {
+  width: 85%;
+  overflow: hidden;
 }
 
 .content-checkbox:checked ~ .check-click-content .plats-text {

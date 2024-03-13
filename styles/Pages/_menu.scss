@@ -134,6 +134,10 @@
     width: 100%;
     font-size: 1.125rem;
     font-weight: 700;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: all 500ms ease ;
     @media screen and (min-width:1024px){
         overflow: visible;
     }
@@ -202,6 +206,10 @@
     @include animation-check-price;
     transform: translateX(-62px);
 }
+.content-checkbox:checked ~ .check-click-content .plats-title {
+    width: 85%;
+    overflow: hidden;
+ }
 .content-checkbox:checked ~ .check-click-content .plats-text {
    width: 70%;
    overflow: hidden;
